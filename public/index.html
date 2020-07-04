@@ -48,7 +48,9 @@
   <!-- check if browser supports service worker -->
   <script>
     if ("serviceWorker" in navigator) {
+      // once page is loaded
       window.addEventListener("load", () => {
+        //run this code - navigator api
         navigator.serviceWorker.register("service-worker.js").then(reg => {
           console.log("service worker file found", reg);
         });
