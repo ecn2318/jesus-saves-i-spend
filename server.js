@@ -15,9 +15,11 @@ app.use(express.json());
 
 app.use(express.static("public"));
 
-mongoose.connect("mongodb://localhost/budget", {
+mongoose.connect(process.env.MONGODB_URI || "mongodb://localhost/budget", {
   useNewUrlParser: true,
-  useFindAndModify: false
+  useCreateIndex: true,
+  useFindAndModify: false, //see deprecation warnings
+  family: 4 // Use IPv4, skip trying IPv6
 });
 
 // routes
