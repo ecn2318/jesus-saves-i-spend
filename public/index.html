@@ -7,6 +7,10 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="theme-color" content="#317EFB">
   <link rel="shortcut icon" href="icons/icon-192x192.png" type="image/x-icon">
+
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:wght@100;300;400;500;900&display=swap"
+    rel="stylesheet">
+
   <!-- link to manifest file -->
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -16,30 +20,52 @@
 </head>
 
 <body>
+  <br>
+  <br>
   <div class="wrapper">
     <div class="total">
-      <div class="total">Your total is: $<span id="total">0</span></div>
+      <div class="total">Balance: $<span id="total">0</span></div>
     </div>
 
-    <div class="form">
-      <input type="text" id="t-name" placeholder="Name of transaction" />
-      <input type="number" min="0" id="t-amount" placeholder="Transaction amount" />
-      <button id="add-btn"><i class="fa fa-plus buttons"></i> Add Funds</button>
-      <button id="sub-btn"><i class="fa fa-minus"></i> Subtract Funds</button>
-      <p class="error"></p>
-    </div>
+    <br>
+    <hr>
+    <br>
+
+    <form>
+      <label>Transaction Name</label>
+      <input type="text" id="t-name" placeholder="Name of Transaction" />
+      <br>
+      <br>
+      <label>Transaction Amount ($)</label>
+      <input type="number" min="0" id="t-amount" placeholder="Transaction Amount" />
+
+      <div class="transaction-buttons">
+        <button id="add-btn"><i class="fa fa-plus buttons"></i> Income </button>
+        <button id="sub-btn"><i class="fa fa-minus"></i> Expenses </button>
+      </div>
+
+      <p role="alert" class="error"></p>
+    </form>
+
+    <br>
+    <hr>
+    <br>
 
     <div class="transactions">
       <table>
         <thead>
-          <th>Transaction</th>
-          <th>Amount</th>
+          <th>Transaction Name</th>
+          <th>Transaction Amount ($)</th>
         </thead>
         <tbody id="tbody">
 
         </tbody>
       </table>
     </div>
+
+    <br>
+    <hr>
+    <br>
 
     <canvas id="myChart"></canvas>
   </div>
